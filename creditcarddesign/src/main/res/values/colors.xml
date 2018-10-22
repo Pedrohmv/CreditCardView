@@ -16,6 +16,9 @@
     <color name="blue_color">#5D8BF2</color>
     <color name="blue_color_gradient">#3545AE</color>
 
+    <color name="gray_color">#787a7b</color>
+    <color name="gray_color_gradient">#515153</color>
+
     <color name="pink_color">#d04c84</color>
     <color name="pink_color_gradient">#d04882</color>
 
@@ -25,7 +28,7 @@
     <color name="brown_color">#800000</color>
     <color name="brown_color_gradient">#A52A2A</color>
 
-
-
+    <color name="yellow_color">#f4ca53</color>
+    <color name="yellow_color_gradient">#e2c673</color>
 
 </resources>

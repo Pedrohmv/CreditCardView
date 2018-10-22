@@ -1,15 +1,17 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+group ='com.github.Pedrohmv'
 
 android {
 
     compileSdkVersion 25
-    buildToolsVersion "25.0.1"
+    buildToolsVersion '28.0.3'
     defaultConfig {
         vectorDrawables.useSupportLibrary = true
         minSdkVersion 10
         targetSdkVersion 25
         versionCode 1
-        versionName "1.0.3"
+        versionName "1.0.0"
     }
     buildTypes {
         release {
