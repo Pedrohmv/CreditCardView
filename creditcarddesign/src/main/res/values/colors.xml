@@ -7,8 +7,11 @@
     <color name="chip_yellow_color">#fbe191</color>
     <color name="chip_yellow_inner_color">#eed280</color>
 
-    <color name="purple_color">#520C8F</color>
-    <color name="purple_color_gradient">#520C8F</color>
+    <color name="purple_color">#651dc4</color>
+    <color name="purple_color_gradient">#5515a9</color>
+
+    <color name="black_color">#263238</color>
+    <color name="black_color_gradient">#212121</color>
 
     <color name="green_color">#A0B38A</color>
     <color name="green_color_gradient">#A0B38A</color>
@@ -33,8 +36,8 @@
     <color name="default_color">#363434</color>
     <color name="default_color_gradient">#434141</color>
 
-    <color name="red_color">#BF151D</color>
-    <color name="red_color_gradient">#991017</color>
+    <color name="red_color">#e45158</color>
+    <color name="red_color_gradient">#b4232b</color>
 
     <color name="light_color">#F5F5F5</color>
     <color name="light_color_gradient">#E6E6E6</color>
