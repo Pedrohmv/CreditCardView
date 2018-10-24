@@ -22,34 +22,6 @@
         <option name="PROJECT_TYPE" value="1" />
       </configuration>
     </facet>
-    <facet type="kotlin-language" name="Kotlin">
-      <configuration version="3" platform="JVM 1.6" useProjectSettings="false">
-        <compilerSettings />
-        <compilerArguments>
-          <option name="destination" value="$MODULE_DIR$/build/tmp/kotlin-classes/debug" />
-          <option name="classpath" value="$USER_HOME$/.gradle/caches/transforms-1/files-1.1/appcompat-v7-28.0.0.aar/09ece11aaee41fbb9ae787d40e4ce959/jars/classes.jar:/home/pedro/.gradle/caches/transforms-1/files-1.1/cardview-v7-28.0.0.aar/bcc7d13b99f7832ce90b54e091fcf0a0/jars/classes.jar:/home/pedro/.gradle/caches/transforms-1/files-1.1/CircularReveal-1.0.5.aar/9bab097f693d7b210acd574258c4b2d7/jars/classes.jar:/home/pedro/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jdk7/1.2.71/4ce93f539e2133f172f1167291a911f83400a5d0/kotlin-stdlib-jdk7-1.2.71.jar:/home/pedro/.gradle/caches/transforms-1/files-1.1/support-fragment-28.0.0.aar/4b79c20bd8d050d429f3b81a804b2421/jars/classes.jar:/home/pedro/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-28.0.0.aar/c51a18f9adaa16749ca75bf790aaaf43/jars/classes.jar:/home/pedro/.gradle/caches/transforms-1/files-1.1/support-core-ui-28.0.0.aar/cb1888755f76659e964b2b48c24e436d/jars/classes.jar:/home/pedro/.gradle/caches/transforms-1/files-1.1/support-core-utils-28.0.0.aar/0cc6898f268af9b1e28d1675771e26fc/jars/classes.jar:/home/pedro/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-28.0.0.aar/79ae7cc141906623f1bdd5ceacf2e589/jars/classes.jar:/home/pedro/.gradle/caches/transforms-1/files-1.1/loader-28.0.0.aar/bf0adb776e3a2c0aa2a04c1fc15dc705/jars/classes.jar:/home/pedro/.gradle/caches/transforms-1/files-1.1/viewpager-28.0.0.aar/278785224f198944318e3bfa180bade0/jars/classes.jar:/home/pedro/.gradle/caches/transforms-1/files-1.1/coordinatorlayout-28.0.0.aar/dc39bf3d049ab39f694148ab07bea85f/jars/classes.jar:/home/pedro/.gradle/caches/transforms-1/files-1.1/drawerlayout-28.0.0.aar/0cfd33be94a98a138272d74e71db9a44/jars/classes.jar:/home/pedro/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-28.0.0.aar/dce4aa67318bf703b8effcb35cec5e4e/jars/classes.jar:/home/pedro/.gradle/caches/transforms-1/files-1.1/customview-28.0.0.aar/db24d73d3c9bee66e9edb6dff13a502c/jars/classes.jar:/home/pedro/.gradle/caches/transforms-1/files-1.1/swiperefreshlayout-28.0.0.aar/1455b4101cec9f2ba216e011e4ebdc52/jars/classes.jar:/home/pedro/.gradle/caches/transforms-1/files-1.1/asynclayoutinflater-28.0.0.aar/c874e80e9fbc53f33753a3a0b08a7f45/jars/classes.jar:/home/pedro/.gradle/caches/transforms-1/files-1.1/support-compat-28.0.0.aar/fc614a791f6f6594f7f2195c78e3623f/jars/classes.jar:/home/pedro/.gradle/caches/transforms-1/files-1.1/versionedparcelable-28.0.0.aar/779c1203ee0d57cbb0f8074d9ca8b171/jars/classes.jar:/home/pedro/.gradle/caches/modules-2/files-2.1/com.android.support/collections/28.0.0/c1bcdade4d3cc2836130424a3f3e4182c666a745/collections-28.0.0.jar:/home/pedro/.gradle/caches/transforms-1/files-1.1/cursoradapter-28.0.0.aar/63831688f20e6a93b2b74e2eff1e8aec/jars/classes.jar:/home/pedro/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/3b3d3813f35c358112f7a465b6208f86/jars/classes.jar:/home/pedro/.gradle/caches/transforms-1/files-1.1/documentfile-28.0.0.aar/5d1707b8b430f84d092d477238fa22b8/jars/classes.jar:/home/pedro/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-28.0.0.aar/8fda66e0dae09c26a208b2c752b4be19/jars/classes.jar:/home/pedro/.gradle/caches/transforms-1/files-1.1/print-28.0.0.aar/ec126e1c1536974dadac79e1815cdefa/jars/classes.jar:/home/pedro/.gradle/caches/transforms-1/files-1.1/viewmodel-1.1.1.aar/80036f140f6c32a2b1efee0fd455bdcb/jars/classes.jar:/home/pedro/.gradle/caches/transforms-1/files-1.1/livedata-1.1.1.aar/5ba1a2af796a48555a924d263c2ff463/jars/classes.jar:/home/pedro/.gradle/caches/transforms-1/files-1.1/livedata-core-1.1.1.aar/fc41036646ddabf8cedf2fe7489f09bd/jars/classes.jar:/home/pedro/.gradle/caches/modules-2/files-2.1/android.arch.lifecycle/common/1.1.1/207a6efae6a3555e326de41f76bdadd9a239cbce/common-1.1.1.jar:/home/pedro/.gradle/caches/transforms-1/files-1.1/runtime-1.1.1.aar/3531494b65a8107d3a2d57e1fb41e404/jars/classes.jar:/home/pedro/.gradle/caches/modules-2/files-2.1/android.arch.core/common/1.1.1/e55b70d1f5620db124b3e85a7f4bdc7bd48d9f95/common-1.1.1.jar:/home/pedro/.gradle/caches/transforms-1/files-1.1/interpolator-28.0.0.aar/741c03df14fcdc0174130856315c2a80/jars/classes.jar:/home/pedro/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/28.0.0/ed73f5337a002d1fd24339d5fb08c2c9d9ca60d8/support-annotations-28.0.0.jar:/home/pedro/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar:/home/pedro/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.2.71/d9717625bb3c731561251f8dd2c67a1011d6764c/kotlin-stdlib-1.2.71.jar:/home/pedro/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.2.71/ba18ca1aa0e40eb6f1865b324af2f4cbb691c1ec/kotlin-stdlib-common-1.2.71.jar:/home/pedro/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar:/home/pedro/Android/Sdk/platforms/android-28/android.jar" />
-          <option name="noStdlib" value="true" />
-          <option name="noReflect" value="true" />
-          <option name="moduleName" value="creditcarddesign_debug" />
-          <option name="addCompilerBuiltIns" value="true" />
-          <option name="loadBuiltInsFromDependencies" value="true" />
-          <option name="languageVersion" value="1.2" />
-          <option name="apiVersion" value="1.2" />
-          <option name="pluginOptions">
-            <array>
-              <option value="plugin:org.jetbrains.kotlin.android:experimental=false" />
-              <option value="plugin:org.jetbrains.kotlin.android:enabled=true" />
-              <option value="plugin:org.jetbrains.kotlin.android:defaultCacheImplementation=hashMap" />
-            </array>
-          </option>
-          <option name="pluginClasspaths">
-            <array>
-              <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-android-extensions/1.2.71/bda3ee49317ef7a1e8058de61f91abe94c015538/kotlin-android-extensions-1.2.71.jar" />
-            </array>
-          </option>
-        </compilerArguments>
-      </configuration>
-    </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_7">
     <output url="file://$MODULE_DIR$/build/intermediates/javac/debug/compileDebugJavaWithJavac/classes" />
@@ -144,17 +116,13 @@
     <orderEntry type="library" name="Gradle: com.android.support:support-core-ui-28.0.0" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:slidingpanelayout-28.0.0" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:viewmodel-1.1.1" level="project" />
-    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-common:1.2.71@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:cardview-v7-28.0.0" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:drawerlayout-28.0.0" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:coordinatorlayout-28.0.0" level="project" />
-    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.2.71@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.github.ozodrukh:CircularReveal-1.0.5" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:collections:28.0.0@jar" level="project" />
-    <orderEntry type="library" name="Gradle: org.jetbrains.kotlin:kotlin-stdlib:1.2.71@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:documentfile-28.0.0" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:swiperefreshlayout-28.0.0" level="project" />
-    <orderEntry type="library" name="Gradle: org.jetbrains:annotations:13.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:cursoradapter-28.0.0" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:asynclayoutinflater-28.0.0" level="project" />
     <orderEntry type="library" name="Gradle: android.arch.lifecycle:livedata-1.1.1" level="project" />
