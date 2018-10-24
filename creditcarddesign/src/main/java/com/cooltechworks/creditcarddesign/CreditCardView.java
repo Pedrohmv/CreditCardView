@@ -26,13 +26,13 @@ public class CreditCardView extends FrameLayout {
     private static final int TEXTVIEW_CARD_HOLDER_ID = R.id.front_card_holder_name;
     private static final int TEXTVIEW_CARD_EXPIRY_ID = R.id.front_card_expiry;
     private static final int TEXTVIEW_CARD_NUMBER_ID = R.id.front_card_number;
+    private static final int TEXTVIEW_CARD_EXP_LABEL_ID = R.id.card_expiry_label;
+    private static final int TEXTVIEW_CARD_NAME_LABEL_ID = R.id.card_name_label;
     private static final int TEXTVIEW_CARD_CVV_ID = R.id.back_card_cvv;
-    private static final int TEXTVIEW_CARD_CVV_AMEX_ID = R.id.front_card_cvv;
     private static final int FRONT_CARD_ID = R.id.front_card_container;
     private static final int BACK_CARD_ID = R.id.back_card_container;
     private static final int FRONT_CARD_OUTLINE_ID = R.id.front_card_outline;
     private static final int BACK_CARD_OUTLINE_ID = R.id.back_card_outline;
-
 
     private int mCurrentDrawable;
     private String mRawCardNumber;
@@ -71,12 +71,14 @@ public class CreditCardView extends FrameLayout {
         return mExpiry;
     }
 
-    public CreditCardUtils.CardType getCardType() { return mCardType; }
+    public CreditCardUtils.CardType getCardType() {
+        return mCardType;
+    }
 
     interface ICustomCardSelector {
         CardSelector getCardSelector(String cardNumber);
     }
-    
+
     private void init() {
 
         mCurrentDrawable = R.drawable.card_color_round_rect_default;
@@ -101,14 +103,14 @@ public class CreditCardView extends FrameLayout {
         String cardNumber = a.getString(R.styleable.creditcard_card_number);
 
         int cvv = a.getInt(R.styleable.creditcard_cvv, 0);
-        int cardSide = a.getInt(R.styleable.creditcard_card_side,CreditCardUtils.CARD_SIDE_FRONT);
+        int cardSide = a.getInt(R.styleable.creditcard_card_side, CreditCardUtils.CARD_SIDE_FRONT);
 
         setCardNumber(cardNumber);
         setCVV(cvv);
         setCardExpiry(expiry);
         setCardHolderName(cardHolderName);
 
-        if(cardSide == CreditCardUtils.CARD_SIDE_BACK) {
+        if (cardSide == CreditCardUtils.CARD_SIDE_BACK) {
             showBackImmediate();
         }
 
@@ -130,14 +132,12 @@ public class CreditCardView extends FrameLayout {
         View layoutContentContainer = findViewById(R.id.card_container);
 
 
-        if(isImmediate) {
-            frontContentView.setVisibility(ltr?VISIBLE:GONE);
-            backContentView.setVisibility(ltr?GONE:VISIBLE);
+        if (isImmediate) {
+            frontContentView.setVisibility(ltr ? VISIBLE : GONE);
+            backContentView.setVisibility(ltr ? GONE : VISIBLE);
+        } else {
 
-        }
-        else {
-
-            int duration =  600;
+            int duration = 600;
 
             FlipAnimator flipAnimator = new FlipAnimator(frontView, backView, frontView.getWidth() / 2, backView.getHeight() / 2);
             flipAnimator.setInterpolator(new OvershootInterpolator(0.5f));
@@ -172,20 +172,18 @@ public class CreditCardView extends FrameLayout {
 
         this.mRawCardNumber = rawCardNumber == null ? "" : rawCardNumber;
         this.mCardType = CreditCardUtils.selectCardType(this.mRawCardNumber);
-        String cardNumber = CreditCardUtils.formatCardNumber(this.mRawCardNumber, CreditCardUtils.SPACE_SEPERATOR);
+        String cardNumber = CreditCardUtils.formatCardNumber(this.mRawCardNumber, CreditCardUtils.SPACE_SEPARATOR);
 
-        ((TextView)findViewById(TEXTVIEW_CARD_NUMBER_ID)).setText(cardNumber);
-        ((TextView)findViewById(TEXTVIEW_CARD_CVV_AMEX_ID)).setVisibility(mCardType == CreditCardUtils.CardType.AMEX_CARD ? View.VISIBLE : View.GONE);
+        ((TextView) findViewById(TEXTVIEW_CARD_NUMBER_ID)).setText(cardNumber);
 
-        if(this.mCardType != CreditCardUtils.CardType.UNKNOWN_CARD) {
+        if (this.mCardType != CreditCardUtils.CardType.UNKNOWN_CARD) {
             this.post(new Runnable() {
                 @Override
                 public void run() {
                     revealCardAnimation();
                 }
             });
-        }
-        else {
+        } else {
             paintCard();
         }
 
@@ -193,10 +191,9 @@ public class CreditCardView extends FrameLayout {
 
     public void setCVV(int cvvInt) {
 
-        if(cvvInt == 0) {
+        if (cvvInt == 0) {
             setCVV("");
-        }
-        else {
+        } else {
             String cvv = String.valueOf(cvvInt);
             setCVV(cvv);
         }
@@ -204,34 +201,33 @@ public class CreditCardView extends FrameLayout {
     }
 
     public void showFront() {
-        flip(true,false);
+        flip(true, false);
     }
 
     public void showFrontImmediate() {
-        flip(true,true);
+        flip(true, true);
     }
 
     public void showBack() {
-        flip(false,false);
+        flip(false, false);
     }
 
     public void showBackImmediate() {
-        flip(false,true);
+        flip(false, true);
     }
 
     public void setCVV(String cvv) {
-        if(cvv == null) {
+        if (cvv == null) {
             cvv = "";
         }
 
         this.mCVV = cvv;
-        ((TextView)findViewById(TEXTVIEW_CARD_CVV_ID)).setText(cvv);
-        ((TextView)findViewById(TEXTVIEW_CARD_CVV_AMEX_ID)).setText(cvv);
+        ((TextView) findViewById(TEXTVIEW_CARD_CVV_ID)).setText(cvv);
     }
 
     public void setCardExpiry(String dateYear) {
 
-        dateYear = dateYear == null ? "": CreditCardUtils.handleExpiration(dateYear);
+        dateYear = dateYear == null ? "" : CreditCardUtils.handleExpiration(dateYear);
 
         this.mExpiry = dateYear;
 
@@ -243,13 +239,13 @@ public class CreditCardView extends FrameLayout {
     public void setCardHolderName(String cardHolderName) {
 
         cardHolderName = cardHolderName == null ? "" : cardHolderName;
-        if(cardHolderName.length() > mCardnameLen) {
-            cardHolderName = cardHolderName.substring(0,mCardnameLen);
+        if (cardHolderName.length() > mCardnameLen) {
+            cardHolderName = cardHolderName.substring(0, mCardnameLen);
         }
 
         this.mCardHolderName = cardHolderName;
 
-        ((TextView)findViewById(TEXTVIEW_CARD_HOLDER_ID)).setText(cardHolderName);
+        ((TextView) findViewById(TEXTVIEW_CARD_HOLDER_ID)).setText(cardHolderName);
     }
 
     public void paintCard() {
@@ -261,7 +257,7 @@ public class CreditCardView extends FrameLayout {
         View chipContainer = findViewById(R.id.chip_container);
         View chipInner = findViewById(R.id.chip_inner_view);
 
-        View cardBack =  findViewById(BACK_CARD_OUTLINE_ID);
+        View cardBack = findViewById(BACK_CARD_OUTLINE_ID);
         View cardFront = findViewById(FRONT_CARD_OUTLINE_ID);
 
 
@@ -271,9 +267,16 @@ public class CreditCardView extends FrameLayout {
         ImageView frontLogoImageView = (ImageView) cardContainer.findViewById(R.id.logo_img);
         frontLogoImageView.setImageResource(card.getResLogoId());
 
-        ImageView centerImageView = (ImageView) cardContainer.findViewById(R.id.logo_center_img);
-        centerImageView.setImageResource(card.getResCenterImageId());
+        int color = getResources().getColor(R.color.white);
+        if (card.isHasDarkText()) color = getResources().getColor(R.color.black);
 
+        ((TextView) findViewById(TEXTVIEW_CARD_HOLDER_ID)).setTextColor(color);
+        ((TextView) findViewById(TEXTVIEW_CARD_EXPIRY_ID)).setTextColor(color);
+        ((TextView) findViewById(TEXTVIEW_CARD_NUMBER_ID)).setTextColor(color);
+        ((TextView) findViewById(TEXTVIEW_CARD_EXPIRY_ID)).setHintTextColor(color);
+        ((TextView) findViewById(TEXTVIEW_CARD_HOLDER_ID)).setHintTextColor(color);
+        ((TextView) findViewById(TEXTVIEW_CARD_EXP_LABEL_ID)).setTextColor(color);
+        ((TextView) findViewById(TEXTVIEW_CARD_NAME_LABEL_ID)).setTextColor(color);
 
         ImageView backLogoImageView = (ImageView) findViewById(BACK_CARD_ID).findViewById(R.id.logo_img);
         backLogoImageView.setImageResource(card.getResLogoId());
@@ -296,7 +299,7 @@ public class CreditCardView extends FrameLayout {
     }
 
     public CardSelector selectCard() {
-        if(mSelectorLogic != null) {
+        if (mSelectorLogic != null) {
             return mSelectorLogic.getCardSelector(mRawCardNumber);
         }
         return CardSelector.selectCard(mRawCardNumber);

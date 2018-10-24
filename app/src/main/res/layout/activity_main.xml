@@ -11,65 +11,78 @@
       android:id="@+id/card_container"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:orientation="vertical"
-      >
+      android:orientation="vertical">
 
-      <!--<com.cooltechworks.creditcarddesign.CreditCardView-->
-          <!--android:id="@+id/card_1"-->
-          <!--android:layout_width="wrap_content"-->
-          <!--android:layout_height="wrap_content"-->
-          <!--app:card_number="56656789000000000"-->
-          <!--app:card_holder_name="JOHN MATTEW"-->
-          <!--app:cvv="522"-->
-          <!--app:card_expiration="01/12"-->
-          <!--/>-->
+      <com.cooltechworks.creditcarddesign.CreditCardView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:card_number="375987654321001"
+          app:card_holder_name="PEDRO H M VIEIRA"
+          app:cvv="522"
+          app:card_expiration="12/18"/>
 
-      <!--<com.cooltechworks.creditcarddesign.CreditCardView-->
-          <!--android:id="@+id/card_2"-->
-          <!--android:layout_width="wrap_content"-->
-          <!--android:layout_height="wrap_content"-->
-          <!--app:card_number="34656789000000000"-->
-          <!--app:card_holder_name="JOHN MATTEW"-->
-          <!--app:cvv="522"-->
-          <!--app:card_expiration="01/12"-->
-          <!--/>-->
+      <com.cooltechworks.creditcarddesign.CreditCardView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:card_number="6361170956212105"
+          app:card_holder_name="DANIEL PEDROSA"
+          app:cvv="522"
+          app:card_expiration="12/18"/>
 
-      <!--<com.cooltechworks.creditcarddesign.CreditCardView-->
-          <!--android:id="@+id/card_3"-->
-          <!--android:layout_width="wrap_content"-->
-          <!--android:layout_height="wrap_content"-->
-          <!--app:card_number="44656789000000000"-->
-          <!--app:card_holder_name="JOHN MATTEW"-->
-          <!--app:cvv="522"-->
-          <!--app:card_expiration="01/12"-->
-          <!--/>-->
+      <com.cooltechworks.creditcarddesign.CreditCardView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:card_number="4242424242424242"
+          app:card_holder_name="ACACIO RAMOS S"
+          app:cvv="522"
+          app:card_expiration="01/22"/>
 
+      <com.cooltechworks.creditcarddesign.CreditCardView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:card_number="6362970003333021"
+          app:card_holder_name="CHICO MIGUEL S F"
+          app:cvv="522"
+          app:card_expiration="04/20"/>
 
-      <!--<com.cooltechworks.creditcarddesign.CreditCardView-->
-          <!--android:id="@+id/card_4"-->
-          <!--android:layout_width="wrap_content"-->
-          <!--android:layout_height="wrap_content"-->
-          <!--app:card_number="56456789000000000"-->
-          <!--app:card_holder_name="JOHN MATTEW"-->
-          <!--app:cvv="522"-->
-          <!--app:card_expiration="01/12"-->
-          <!--/>-->
+      <com.cooltechworks.creditcarddesign.CreditCardView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:card_number="5123740008243257"
+          app:card_holder_name="LUCIANO M BARRETO"
+          app:cvv="522"
+          app:card_expiration="04/20"/>
 
-      <!--<com.cooltechworks.creditcarddesign.CreditCardView-->
-          <!--android:id="@+id/card_5"-->
-          <!--android:layout_width="wrap_content"-->
-          <!--android:layout_height="wrap_content"-->
-          <!--app:card_number="38056789000000000"-->
-          <!--app:card_holder_name="JOHN MATTEW"-->
-          <!--app:cvv="522"-->
-          <!--app:card_expiration="01/12"-->
-          <!--/>-->
+      <com.cooltechworks.creditcarddesign.CreditCardView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:card_number="6062822721779170"
+          app:card_holder_name="FABIANA DE S SANTOS"
+          app:cvv="522"
+          app:card_expiration="04/20"/>
+
+      <com.cooltechworks.creditcarddesign.CreditCardView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:card_number="639595027000068745"
+          app:card_holder_name="FABIANA DE S SANTOS"
+          app:cvv="522"
+          app:card_expiration="04/20"/>
+
+      <com.cooltechworks.creditcarddesign.CreditCardView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:card_number="6031340000072199"
+          app:card_holder_name="FABIANA DE S SANTOS"
+          app:cvv="522"
+          app:card_expiration="04/20"/>
 
       <Button
           android:id="@+id/add_card"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:text="ADD CARD"
+          android:visibility="gone"
           />
 
   </LinearLayout>

@@ -7,28 +7,43 @@
     <color name="chip_yellow_color">#fbe191</color>
     <color name="chip_yellow_inner_color">#eed280</color>
 
-    <color name="purple_color">#5515a9</color>
-    <color name="purple_color_gradient">#651dc4</color>
+    <color name="purple_color">#520C8F</color>
+    <color name="purple_color_gradient">#520C8F</color>
 
-    <color name="green_color">#108b4c</color>
-    <color name="green_color_gradient">#1caf57</color>
+    <color name="green_color">#A0B38A</color>
+    <color name="green_color_gradient">#A0B38A</color>
 
     <color name="blue_color">#5D8BF2</color>
     <color name="blue_color_gradient">#3545AE</color>
 
-    <color name="gray_color">#787a7b</color>
-    <color name="gray_color_gradient">#515153</color>
+    <color name="light_blue_color">#71A8F9</color>
+    <color name="light_blue_color_gradient">#6697E0</color>
 
-    <color name="pink_color">#d04c84</color>
-    <color name="pink_color_gradient">#d04882</color>
+    <color name="gray_color">#525252</color>
+    <color name="gray_color_gradient">#424242</color>
+
+    <color name="silver_color">#D7D7D7</color>
+    <color name="silver_color_gradient">#A7A7AD</color>
+
+    <color name="dark_blue_color">#17216A</color>
+    <color name="dark_blue_color_gradient">#0F1545</color>
+
+    <color name="dark_blue2_color">#090F30</color>
 
     <color name="default_color">#363434</color>
     <color name="default_color_gradient">#434141</color>
 
-    <color name="brown_color">#800000</color>
-    <color name="brown_color_gradient">#A52A2A</color>
+    <color name="red_color">#BF151D</color>
+    <color name="red_color_gradient">#991017</color>
 
-    <color name="yellow_color">#f4ca53</color>
-    <color name="yellow_color_gradient">#e2c673</color>
+    <color name="light_color">#F5F5F5</color>
+    <color name="light_color_gradient">#E6E6E6</color>
+
+    <color name="yellow_color">#A9881F</color>
+    <color name="yellow_color_gradient">#A9881F</color>
+
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
 
 </resources>

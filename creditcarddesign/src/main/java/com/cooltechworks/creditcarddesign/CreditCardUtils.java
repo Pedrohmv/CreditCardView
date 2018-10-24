@@ -36,6 +36,8 @@ public class CreditCardUtils {
 
     public static final String CARD_NUMBER_FORMAT = "XXXX XXXX XXXX XXXX";
     public static final String CARD_NUMBER_FORMAT_AMEX = "XXXX XXXXXX XXXXX";
+    public static final String CARD_NUMBER_FORMAT_ASSOMISE = "XXXXXX XXXX XXXX XXXX";
+    public static final String CARD_NUMBER_FORMAT_FORTBRASIL = "XXXXXX XXXXXX XXXX";
 
     public static final String EXTRA_CARD_NUMBER = "card_number";
     public static final String EXTRA_CARD_CVV = "card_cvv";
@@ -50,49 +52,56 @@ public class CreditCardUtils {
     public static final int CARD_NUMBER_PAGE = 0, CARD_EXPIRY_PAGE = 1;
     public static final int CARD_CVV_PAGE = 2, CARD_NAME_PAGE = 3;
 
-    public static final String SPACE_SEPERATOR = " ";
-    public static final String SLASH_SEPERATOR = "/";
+    public static final String SPACE_SEPARATOR = " ";
+    public static final String SLASH_SEPARATOR = "/";
     public static final char CHAR_X = 'X';
 
     public static String handleCardNumber(String inputCardNumber) {
 
-        return handleCardNumber(inputCardNumber,SPACE_SEPERATOR);
+        return handleCardNumber(inputCardNumber, SPACE_SEPARATOR);
     }
 
     public static CardType selectCardType(String cardNumber) {
-        Pattern pCardType = Pattern.compile(PATTERN_ELO);
-        if(pCardType.matcher(cardNumber).matches())
-            return CardType.ELO_CARD;
-        pCardType = Pattern.compile(PATTERN_BANESECARD);
-        if(pCardType.matcher(cardNumber).matches())
-            return CardType.BANESECARD;
-        pCardType = Pattern.compile(PATTERN_ASSOMISE);
-        if(pCardType.matcher(cardNumber).matches())
-            return CardType.ASSOMISE;
-        pCardType = Pattern.compile(PATTERN_HIPERCARD);
-        if(pCardType.matcher(cardNumber).matches())
-            return CardType.HIPERCARD;
-        pCardType = Pattern.compile(PATTERN_FORTBRASIL);
-        if(pCardType.matcher(cardNumber).matches())
-            return CardType.FORTBRASIL;
-        pCardType = Pattern.compile(PATTERN_CREDISHOP);
-        if(pCardType.matcher(cardNumber).matches())
-            return CardType.CREDISHOP;
-        pCardType = Pattern.compile(PATTERN_SOROCRED);
-        if(pCardType.matcher(cardNumber).matches())
-            return CardType.SOROCRED;
-        pCardType = Pattern.compile(PATTERN_VISA);
-        if(pCardType.matcher(cardNumber).matches())
-            return CardType.VISA_CARD;
-        pCardType = Pattern.compile(PATTERN_MASTER);
-        if(pCardType.matcher(cardNumber).matches())
-            return CardType.MASTER_CARD;
-        pCardType = Pattern.compile(PATTERN_AMEX);
-        if(pCardType.matcher(cardNumber).matches())
-            return CardType.AMEX_CARD;
-        pCardType = Pattern.compile(PATTERN_DINERS);
-        if(pCardType.matcher(cardNumber).matches())
-            return CardType.DINERS_CARD;
+        cardNumber = cardNumber.replace(CreditCardUtils.SPACE_SEPARATOR, "");
+        if (cardNumber.length() >= 6) {
+            cardNumber = cardNumber.substring(0, 6);
+            Pattern pCardType = Pattern.compile(PATTERN_ELO);
+            if (pCardType.matcher(cardNumber).matches())
+                return CardType.ELO_CARD;
+            pCardType = Pattern.compile(PATTERN_BANESECARD);
+            if (pCardType.matcher(cardNumber).matches())
+                return CardType.BANESECARD;
+            pCardType = Pattern.compile(PATTERN_ASSOMISE);
+            if (pCardType.matcher(cardNumber).matches())
+                return CardType.ASSOMISE;
+            pCardType = Pattern.compile(PATTERN_HIPERCARD);
+            if (pCardType.matcher(cardNumber).matches())
+                return CardType.HIPERCARD;
+            pCardType = Pattern.compile(PATTERN_BANESECARD);
+            if (pCardType.matcher(cardNumber).matches())
+                return CardType.BANESECARD;
+            pCardType = Pattern.compile(PATTERN_FORTBRASIL);
+            if (pCardType.matcher(cardNumber).matches())
+                return CardType.FORTBRASIL;
+            pCardType = Pattern.compile(PATTERN_CREDISHOP);
+            if (pCardType.matcher(cardNumber).matches())
+                return CardType.CREDISHOP;
+            pCardType = Pattern.compile(PATTERN_SOROCRED);
+            if (pCardType.matcher(cardNumber).matches())
+                return CardType.SOROCRED;
+            pCardType = Pattern.compile(PATTERN_VISA);
+            if (pCardType.matcher(cardNumber).matches())
+                return CardType.VISA_CARD;
+            pCardType = Pattern.compile(PATTERN_MASTER);
+            if (pCardType.matcher(cardNumber).matches())
+                return CardType.MASTER_CARD;
+            pCardType = Pattern.compile(PATTERN_AMEX);
+            if (pCardType.matcher(cardNumber).matches())
+                return CardType.AMEX_CARD;
+            pCardType = Pattern.compile(PATTERN_DINERS);
+            if (pCardType.matcher(cardNumber).matches())
+                return CardType.DINERS_CARD;
+        }
         return CardType.UNKNOWN_CARD;
     }
 
@@ -115,10 +124,16 @@ public class CreditCardUtils {
         return sbFormattedNumber.toString();
     }
 
-    public static String formatCardNumber(String inputCardNumber, String seperator) {
-        String unformattedText = inputCardNumber.replace(seperator, "");
+    public static String formatCardNumber(String inputCardNumber, String separator) {
+        String unformattedText = inputCardNumber.replace(separator, "");
         CardType cardType = selectCardType(inputCardNumber);
-        String format = (cardType == CardType.AMEX_CARD) ? CARD_NUMBER_FORMAT_AMEX : CARD_NUMBER_FORMAT;
+        String format = CARD_NUMBER_FORMAT;
+        if (cardType == CardType.AMEX_CARD)
+            format = CARD_NUMBER_FORMAT_AMEX;
+        else if (cardType == CardType.ASSOMISE)
+            format = CARD_NUMBER_FORMAT_ASSOMISE;
+        else if (cardType == CardType.FORTBRASIL)
+            format = CARD_NUMBER_FORMAT_FORTBRASIL;
         StringBuilder sbFormattedNumber = new StringBuilder();
         for(int iIdx = 0, jIdx = 0; iIdx < format.length(); iIdx++) {
             if((format.charAt(iIdx) == CHAR_X) && (unformattedText.length() > jIdx))
@@ -127,7 +142,7 @@ public class CreditCardUtils {
                 sbFormattedNumber.append(format.charAt(iIdx));
         }
 
-        return sbFormattedNumber.toString().replace(SPACE_SEPERATOR, SPACE_SEPERATOR + SPACE_SEPERATOR);
+        return sbFormattedNumber.toString().replace(SPACE_SEPARATOR, SPACE_SEPARATOR + SPACE_SEPARATOR);
     }
 
     public static String handleExpiration(String month, String year) {
@@ -138,7 +153,7 @@ public class CreditCardUtils {
 
     public static String handleExpiration(@NonNull String dateYear) {
 
-        String expiryString = dateYear.replace(SLASH_SEPERATOR, "");
+        String expiryString = dateYear.replace(SLASH_SEPARATOR, "");
 
         String text;
         if(expiryString.length() >= 2) {
@@ -167,12 +182,12 @@ public class CreditCardUtils {
                     yy = String.valueOf(year).substring(2);
                 }
 
-                text = mm + SLASH_SEPERATOR + yy;
+                text = mm + SLASH_SEPARATOR + yy;
 
             }
             else if(expiryString.length() > 2){
                 yy = expiryString.substring(2);
-                text = mm + SLASH_SEPERATOR + yy;
+                text = mm + SLASH_SEPARATOR + yy;
             }
         }
         else {

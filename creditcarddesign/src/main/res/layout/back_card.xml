@@ -4,7 +4,7 @@
     android:layout_width="300dp"
     android:layout_height="180dp"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:background="@drawable/card_color_round_rect_pink"
+    tools:background="@drawable/card_color_round_rect_light"
     android:visibility="gone"
     >
 
