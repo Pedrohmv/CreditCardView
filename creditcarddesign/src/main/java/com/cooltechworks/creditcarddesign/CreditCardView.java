@@ -106,7 +106,7 @@ public class CreditCardView extends FrameLayout {
         int cvv = a.getInt(R.styleable.creditcard_cvv, 0);
         int cardSide = a.getInt(R.styleable.creditcard_card_side, CreditCardUtils.CARD_SIDE_FRONT);
         this.cardSide = cardSide;
-        setCardNumber(cardNumber);
+        setCardNumber(cardNumber, false);
         setCVV(cvv);
         setCardExpiry(expiry);
         setCardHolderName(cardHolderName);
@@ -120,7 +120,6 @@ public class CreditCardView extends FrameLayout {
         a.recycle();
 
     }
-
 
     private void flip(final boolean ltr, boolean isImmediate) {
 
@@ -178,8 +177,7 @@ public class CreditCardView extends FrameLayout {
         }
     }
 
-    public void setCardNumber(String rawCardNumber) {
-
+    public void setCardNumber(String rawCardNumber, boolean animate) {
 
         this.mRawCardNumber = rawCardNumber == null ? "" : rawCardNumber;
         this.mCardType = CreditCardUtils.selectCardType(this.mRawCardNumber);
@@ -187,7 +185,7 @@ public class CreditCardView extends FrameLayout {
 
         ((TextView) findViewById(TEXTVIEW_CARD_NUMBER_ID)).setText(cardNumber);
 
-        if (this.mCardType != CreditCardUtils.CardType.UNKNOWN) {
+        if (this.mCardType != CreditCardUtils.CardType.UNKNOWN && animate) {
             this.post(new Runnable() {
                 @Override
                 public void run() {
