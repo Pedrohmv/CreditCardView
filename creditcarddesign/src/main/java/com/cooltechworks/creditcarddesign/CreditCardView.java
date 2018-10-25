@@ -35,6 +35,7 @@ public class CreditCardView extends FrameLayout {
     private static final int BACK_CARD_OUTLINE_ID = R.id.back_card_outline;
 
     private int mCurrentDrawable;
+    private int cardSide = CreditCardUtils.CARD_SIDE_FRONT;
     private String mRawCardNumber;
     private ICustomCardSelector mSelectorLogic;
     private String cardBrand = "UNKNOWN";
@@ -104,7 +105,7 @@ public class CreditCardView extends FrameLayout {
 
         int cvv = a.getInt(R.styleable.creditcard_cvv, 0);
         int cardSide = a.getInt(R.styleable.creditcard_card_side, CreditCardUtils.CARD_SIDE_FRONT);
-
+        this.cardSide = cardSide;
         setCardNumber(cardNumber);
         setCVV(cvv);
         setCardExpiry(expiry);
@@ -165,6 +166,14 @@ public class CreditCardView extends FrameLayout {
             layoutContentContainer.startAnimation(flipAnimator1);
         }
 
+    }
+
+    public void flip() {
+        if (cardSide == CreditCardUtils.CARD_SIDE_FRONT) {
+            flip(false, false);
+        } else {
+            flip(true, false);
+        }
     }
 
     public void setCardNumber(String rawCardNumber) {
