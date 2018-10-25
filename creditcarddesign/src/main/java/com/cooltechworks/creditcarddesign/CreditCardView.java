@@ -171,8 +171,10 @@ public class CreditCardView extends FrameLayout {
     public void flip() {
         if (cardSide == CreditCardUtils.CARD_SIDE_FRONT) {
             flip(false, false);
+            cardSide = CreditCardUtils.CARD_SIDE_BACK;
         } else {
             flip(true, false);
+            cardSide = CreditCardUtils.CARD_SIDE_FRONT;
         }
     }
 
