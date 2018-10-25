@@ -37,7 +37,7 @@ public class CreditCardView extends FrameLayout {
     private int mCurrentDrawable;
     private String mRawCardNumber;
     private ICustomCardSelector mSelectorLogic;
-
+    private String cardBrand = "UNKNOWN";
     private String mCardHolderName, mCVV, mExpiry;
 
     private CreditCardUtils.CardType mCardType;
@@ -176,7 +176,7 @@ public class CreditCardView extends FrameLayout {
 
         ((TextView) findViewById(TEXTVIEW_CARD_NUMBER_ID)).setText(cardNumber);
 
-        if (this.mCardType != CreditCardUtils.CardType.UNKNOWN_CARD) {
+        if (this.mCardType != CreditCardUtils.CardType.UNKNOWN) {
             this.post(new Runnable() {
                 @Override
                 public void run() {
@@ -187,6 +187,10 @@ public class CreditCardView extends FrameLayout {
             paintCard();
         }
 
+    }
+
+    public String getCardBrand() {
+        return this.mCardType.name();
     }
 
     public void setCVV(int cvvInt) {

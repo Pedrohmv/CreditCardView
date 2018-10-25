@@ -83,15 +83,15 @@ public class CardSelector {
 
     public static CardSelector selectCardType(CreditCardUtils.CardType cardType) {
         switch(cardType) {
-            case AMEX_CARD:
+            case AMEX:
                 return AMEX;
-            case DINERS_CARD:
+            case DINERS:
                 return DINERS;
-            case MASTER_CARD:
+            case MASTERCARD:
                 return MASTER;
-            case VISA_CARD:
+            case VISA:
                 return VISA;
-            case ELO_CARD:
+            case ELO:
                 return ELO;
             case ASSOMISE:
                 return ASSOMISE;
